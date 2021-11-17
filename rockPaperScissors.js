@@ -3,6 +3,9 @@ const getUserChoice = userInput => {
   if( userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'){
       return userInput;
   }
+  else if(userInput === 'bomb'){
+      return userInput;
+  }
   else{
     return 'Invalid input, please try again.';
   }
@@ -57,6 +60,9 @@ const determineWinner = (userChoice,computerChoice) =>{
           return 'The user won!';
       }
   }
+  if(userChoice === 'bomb'){
+      return 'The user won!';
+  }
 };
 
 /*console.log(determineWinner('rock','scissors'));
@@ -66,11 +72,12 @@ console.log(determineWinner('rock','rock'));
 
 const playGame = () => {
  
-  const userChoice = getUserChoice('Paper');
+  const userChoice = getUserChoice('Bomb');
   const computerChoice = getComputerChoice();
   console.log('You chose ' + userChoice);
   console.log('The computer chose ' + computerChoice);
   console.log(determineWinner(userChoice,computerChoice)); 
+
 };
 
 
